@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inter_university_registrations",
+  "info": {
+    "singularName": "inter-university-registration",
+    "pluralName": "inter-university-registrations",
+    "displayName": " Inter-University-Registration",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TeamName": {
+      "type": "string"
+    },
+    "UniversityName": {
+      "type": "string"
+    },
+    "teamSize": {
+      "type": "integer"
+    },
+    "competitionDate": {
+      "type": "date"
+    },
+    "registrationDeadline": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "CTF",
+        "Competitive Programming",
+        "Hackathon",
+        "Quiz"
+      ]
+    },
+    "TeamLeadName": {
+      "type": "string"
+    },
+    "ContactEmail": {
+      "type": "string"
+    },
+    "ContactPhone": {
+      "type": "biginteger"
+    },
+    "competition_name": {
+      "type": "string"
+    }
+  }
+}

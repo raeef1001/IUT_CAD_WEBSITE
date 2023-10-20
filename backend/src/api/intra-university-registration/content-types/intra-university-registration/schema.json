@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intra_university_registrations",
+  "info": {
+    "singularName": "intra-university-registration",
+    "pluralName": "intra-university-registrations",
+    "displayName": " Intra-University-registration",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "competitionName": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "googleFormLink": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "registrationDeadline": {
+      "type": "date"
+    },
+    "Catagory": {
+      "type": "enumeration",
+      "enum": [
+        "CTF",
+        "Competitive Programming",
+        "Hackathon",
+        "Quiz"
+      ]
+    }
+  }
+}
