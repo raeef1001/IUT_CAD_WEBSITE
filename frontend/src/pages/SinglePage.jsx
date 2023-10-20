@@ -1,8 +1,14 @@
 import React from 'react';
 import { Context } from '../App';
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
 import { SectionWrapper } from "../hoc";
+import { useContext } from "react";
+
+import { motion } from "framer-motion";
+
+import { styles } from "../styles";
+
+import { fadeIn, textVariant } from "../utils/motion";
 const SinglePage = () => {
   const [banner, BLOG, activities, achievements] = useContext(Context);
   const routeParams = useParams();
@@ -37,29 +43,26 @@ const SinglePage = () => {
   }
   return (
     <div>
-      <div>
-      <h1 className="text-[1.75rem]  my- text-center ">
-            {ourData.attributes.title}
-          </h1>
-       <div className="rounded-md">
-       <img
+      <div className='min-h-[90vh] mt-10 '>
+        <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>{tags[0]}</p>
+        <h2 className='text-white font-500 md:text-[30px] sm:text-[20px] xs:text-[15px] text-[10px]'>{ourData.attributes.title}</h2>
+      </motion.div>
+     <div className='rounded-xl overflow-hidden'>
+     <img
           src={ourData.attributes.image.data.attributes.formats.small.url}
           alt=""
-          className="m-auto w-[50vh] pt-10 pb-10 rounded-md" 
+          className=" w-[50vh] pt-10 pb-10 rounded-xl overflow-hidden" 
         />
-       </div>
-      </div>
-      <div className="mx-3 mb-3 text-[.875rem] font-semibold">
-        <div>
-          <h1 className="text-[1.25rem] font-bold my-3 ">
-            {ourData.attributes.date}
-          </h1>
-          <h1 className="text-[1rem] font my-3 ">
-            {/* {ourData.attributes.description} */}
-            <div dangerouslySetInnerHTML={{__html:ourData.attributes.description }} />
-          </h1>
-        </div>
-      </div>
+     </div>
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+      >
+        {ourData.attributes.description }
+      </motion.p>
+      
+    </div>
     </div>
   );
 };
