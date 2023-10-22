@@ -1,40 +1,21 @@
-# Website Name
+# IUTCS
 
-Brief description of your website.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+### Live url link 
 
-## Introduction
-Provide an introduction to your website, including its purpose and any unique selling points.
+https://iutcs.netlify.app/
 
-## Features
-- List the key features of your website.
+### Backend url link
 
-## Getting Started
-- Instructions on how to set up and run your website locally.
-- Prerequisites (e.g., Node.js, database setup, etc.).
-- Installation steps.
+https://iut-backend.onrender.com/admin/
 
-## Usage
-- Describe how to use your website and its features.
-- Include screenshots or examples, if applicable.
+### admin credentials
+user : mohammadrafy1001@gmail.com
+pass : 4EZ?HtA*xzn$2T%
 
-## Contributing
-- Explain how others can contribute to your project.
-- Provide guidelines for reporting issues and making contributions.
 
-## License
-This project is licensed under the [License Name](LICENSE.md) - add your license here.
 
----
 
-[Optional: Add badges, social media links, and a link to your live website or repository]
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
 [![GitHub](https://img.shields.io/badge/GitHub-YourUsername/YourRepository-blue.svg)](https://github.com/YourUsername/YourRepository)
