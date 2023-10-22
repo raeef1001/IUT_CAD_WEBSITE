@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
+import { useRef } from "react";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -22,7 +23,7 @@ const Navbar = () => {
       title: "Contact",
     },
     {
-      id: "#About",
+      id: "About",
       title: "About",
     },
    
@@ -64,6 +65,45 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const aboutref = useRef(null);
+  const eventref = useRef(null);
+ // Add an event listener when the component mounts
+ useEffect(() => {
+  function handleDocumentClick(event) {
+    // Check if the click target is not within the div
+    if (aboutref.current && !aboutref.current.contains(event.target)) {
+      setAboutToggle(false);
+    }
+  }
+
+  // Attach the event listener to the document
+  document.addEventListener('mousedown', handleDocumentClick);
+
+  // Clean up the event listener when the component unmounts
+  return () => {
+    document.removeEventListener('mousedown', handleDocumentClick);
+  };
+}, [aboutToggle]);
+
+
+ // Add an event listener when the component mounts
+ useEffect(() => {
+
+  function handleDocumentClick(event) {
+    // Check if the click target is not within the div
+    if (eventref.current && !eventref.current.contains(event.target)) {
+      setEventToggle(false);
+    }
+  }
+
+  // Attach the event listener to the document
+  document.addEventListener('mousedown', handleDocumentClick);
+
+  // Clean up the event listener when the component unmounts
+  return () => {
+    document.removeEventListener('mousedown', handleDocumentClick);
+  };
+}, [eventToggle]);
   return (
     <nav
       className={`${
@@ -100,7 +140,7 @@ const Navbar = () => {
               <Link to={`/${nav.id}`}>{nav.title}</Link>
             </li>
           ))}
-          <li
+          <li ref={aboutref}
             className={`${
               active === "About" ? "text-white" : "text-secondary"
             } hover:text-white text-[18px] font-medium cursor-pointer`}
@@ -113,7 +153,7 @@ const Navbar = () => {
       onMouseLeave={() => setIsHoveredAbout(false)}>About  {isHoveredAbout && (
         <span className="inline">&#8595;</span>
       )}</p>
-            <div
+            <div 
             className={`${
               !aboutToggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 xl:right-[14vw] mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
@@ -136,7 +176,7 @@ const Navbar = () => {
             </ul>
           </div>
           </li>
-          <li
+          <li ref={eventref}
             className={`${
               active === "Event" ? "text-white" : "text-secondary"
             } hover:text-white text-[18px] font-medium cursor-pointer`}
@@ -145,11 +185,11 @@ const Navbar = () => {
               setEventToggle(!eventToggle);
             }}
           >
-             <p  onMouseEnter={() => setIsHoveredEvent(true)}
+             <p   onMouseEnter={() => setIsHoveredEvent(true)}
       onMouseLeave={() => setIsHoveredEvent(false)}>Event  {isHoveredEvent && (
         <span className="inline">&#8595;</span>
       )}</p>
-            <div
+            <div 
             className={`${
               !eventToggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 xl:right-[12vw] mx-4 my-2 min-w-[140px] z-10 rounded-xl`}

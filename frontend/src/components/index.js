@@ -9,7 +9,7 @@ import Feedbacks from "./Feedbacks";
 import ContactHome from "./ContactHome";
 import CanvasLoader from "./Loader";
 import  Footer  from './Footer';
-
+import MemberHome from './MemberHome';
 
 export {
   Hero,
@@ -26,5 +26,6 @@ export {
   ComputersCanvas, 
   StarsCanvas,
   Footer,
+  MemberHome
   
 };

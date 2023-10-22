@@ -52,12 +52,11 @@ const LeaderBoard = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/leaderboards?sort=rank",
+        "https://iut-backend.onrender.com/api/leaderboards?sort=rank",
         reqOptions
       );
       const response = await request.json();
       setleaderboard(response.data);
-      console.log("leaderboards at homeleaderboard after setting", leaderboard);
       return response;
     };
 
@@ -72,7 +71,7 @@ const LeaderBoard = () => {
     return (
        <div className='min-h-[90vh] mt-10 '>
         <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
+        <p className={styles.sectionSubText}>IUTCS</p>
         <h2 className={styles.sectionHeadText}>Leaderboard.</h2>
       </motion.div>
 

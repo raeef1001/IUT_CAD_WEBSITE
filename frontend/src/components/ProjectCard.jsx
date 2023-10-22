@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect ,useContext} from "react";
 import Tilt from "react-tilt";
 import { github } from "../assets";
 import { projects } from "../constants";
@@ -7,9 +7,9 @@ import { Link, Route, Routes } from "react-router-dom";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { Context } from '../App';
 const ProjectCard = ({index,id,attributes}) => {
+  
 //   const [image, setimage] = useState(attributes.image.data.attributes.formats.thumbnail.url)
 // useEffect(() => {
   
@@ -37,7 +37,7 @@ const ProjectCard = ({index,id,attributes}) => {
                 }}
                 className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[400px]"
               >
-             <Link   to={`/SinglePage/${attributes.type + "-" + id}`}
+             <Link   to={`/SinglePage/${attributes.type + "-" + id}`} 
             relative="path" >
       
       <div className="relative w-full h-[230px]"   >

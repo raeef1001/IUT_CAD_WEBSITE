@@ -34,7 +34,7 @@ import {
   
 
 } from "../assets";
-
+import image4 from "../assets/loading_images/4.gif"
 export const navLinks = [
   {
     id: "Blog",
@@ -50,20 +50,32 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Professionalism",
+    title: "Application Development",
     icon: web,
   },
   {
-    title: "Excellence",
+    title: "Robotics",
     icon: mobile,
   },
   {
-    title: "IUTCS",
+    title: "Network & Communication",
     icon: backend,
   },
   {
-    title: "Development",
+    title: " Multimedia & Gaming",
     icon: creator,
+  },
+  {
+    title: "Programming and Algorithm",
+    icon: backend,
+  },
+  {
+    title: "Co-curricular Aid and Projects",
+    icon: mobile,
+  },
+  {
+    title: "Liaison and Publication",
+    icon: web,
   },
 ];
 
@@ -347,7 +359,7 @@ var blogElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -372,7 +384,7 @@ var blogElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -397,7 +409,7 @@ var blogElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -426,7 +438,7 @@ var achievementsElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -451,7 +463,7 @@ var achievementsElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -476,7 +488,7 @@ var achievementsElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -505,7 +517,7 @@ var activitiesElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -530,7 +542,7 @@ var activitiesElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -555,7 +567,7 @@ var activitiesElements =[
               
                 formats: {
                    small: {
-                        url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                        url:image4,
                        
                     },
                    
@@ -573,21 +585,21 @@ var CommitteeElements =[
       id:1,
       title:"Committee 1",
       description:"This is Committee 1",
-      image:"https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+      image:image4,
       date:"12/12/12"
   },
   {type:"members",
       id:2,
       title:"committee 2",
       description:"This is committee 2",
-      image:"https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+      image:image4,
       date:"12/12/12"
   },
   {type:"members",
       id:3,
       title:"committee 3",
       description:"This is committee 3",
-      image:"https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+      image:image4,
       date:"12/12/12"
   },
   {type:"members",
@@ -595,7 +607,7 @@ var CommitteeElements =[
       id:4,
       title:"committee 4",
       description:"This is committee 4",
-      image:"https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+      image:image4,
       date:"12/12/12"
   },
   {type:"members",
@@ -603,7 +615,7 @@ var CommitteeElements =[
       id:5,
       title:"committee 5",
       description:"This is committee 5",
-      image:"https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+      image:image4,
       date:"12/12/12"
   }
 ]

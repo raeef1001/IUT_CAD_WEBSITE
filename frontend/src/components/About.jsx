@@ -39,7 +39,7 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
+         <p className={styles.sectionSubText}>IUTCS</p> 
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
@@ -47,11 +47,16 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Institute of Information Technology is one of the fastest growing
-        Institute at University of Dhaka. The study at this Institute is based
-        on three core values: professionalism, excellence and respect. By
-        establishing these principles, IIT ensures that graduates from this
-        Institute can effectively contribute in the industry.
+        IUT Computer Society (IUTCS) was formed by the students of the
+        department of Computer Science and Engineering (CSE) (former CIT) of
+        Islamic University of Technology (IUT) in 2008. There are mainly three
+        societies in IUT and IUTCS is one of them. Students of other departments
+        can also join this society. We have an active student body which
+        arranges several events like Programming Classes and Contests,
+        Application Development Classes, Co-Curricular Aid and Projects etc in a
+        regular basis. We also arrange several workshops on different topics
+        which are also accompanied by IT professionals of our country. At
+        present we have 7 committees to execute these functions. These are:
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

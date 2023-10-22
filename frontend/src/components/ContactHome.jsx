@@ -6,9 +6,9 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import MediaQuery from "react-responsive";
 const ContactHome = () => {
   // const formRef = useRef();
   // const [form, setForm] = useState({
@@ -17,21 +17,31 @@ const ContactHome = () => {
   //   message: "",
   // });
   const form = useRef();
-  // email js section 
-    const sendEmail = (e) => {
-      e.preventDefault();
-  
-      emailjs.sendForm('service_gs2howh', 'template_kqv2qal', form.current, 'yUouTm106zcpLSPcs')
-        .then((result) => {
-            console.log(result.text);
-             notify()
-        }, (error) => {
-            console.log(error.text);
-        });
-    };
-  
-    // toastify section 
-    const notify = () =>  toast.success('👍 Message sent!', {
+  // email js section
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_gs2howh",
+        "template_kqv2qal",
+        form.current,
+        "yUouTm106zcpLSPcs"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          notify();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  // toastify section
+  const notify = () =>
+    toast.success("👍 Message sent!", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -40,7 +50,7 @@ const ContactHome = () => {
       draggable: true,
       progress: undefined,
       theme: "dark",
-      });
+    });
   const [loading, setLoading] = useState(false);
 
   // const handleChange = (e) => {
@@ -96,7 +106,7 @@ const ContactHome = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -104,70 +114,74 @@ const ContactHome = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className='mt-12 flex flex-col gap-8'
+          className="mt-12 flex flex-col gap-8"
         >
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-4">Your Name</span>
             <input
-              type='text'
-              name='from_name'
+              type="text"
+              name="from_name"
               // value={form.name}
               // onChange={handleChange}
               placeholder="What's your good name?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-4">Your email</span>
             <input
-              type='email'
-              name='reply_to'
+              type="email"
+              name="reply_to"
               // value={form.email}
               // onChange={handleChange}
               placeholder="What's your web address?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
               rows={7}
-              name='message'
+              name="message"
               // value={form.message}
               // onChange={handleChange}
-              placeholder='What you want to say?'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              placeholder="What you want to say?"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
 
           <button
-            type='submit'
+            type="submit"
             value="Send"
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </motion.div>
-
+      <MediaQuery query="(min-width: 1024px)">
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
+       
+        
         <EarthCanvas />
+        
       </motion.div>
+      </MediaQuery>
       <ToastContainer
-position="bottom-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-/>
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

@@ -843,39 +843,6 @@ export interface ApiCommitteeCommittee extends Schema.CollectionType {
   };
 }
 
-export interface ApiContactContact extends Schema.CollectionType {
-  collectionName: 'contacts';
-  info: {
-    singularName: 'contact';
-    pluralName: 'contacts';
-    displayName: 'contact';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    address: Attribute.RichText;
-    facebookLink: Attribute.Text;
-    email_1: Attribute.Text;
-    email_2: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::contact.contact',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::contact.contact',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiEventEvent extends Schema.CollectionType {
   collectionName: 'events';
   info: {
@@ -1083,7 +1050,6 @@ declare module '@strapi/strapi' {
       'api::banner.banner': ApiBannerBanner;
       'api::blog.blog': ApiBlogBlog;
       'api::committee.committee': ApiCommitteeCommittee;
-      'api::contact.contact': ApiContactContact;
       'api::event.event': ApiEventEvent;
       'api::inter-university-registration.inter-university-registration': ApiInterUniversityRegistrationInterUniversityRegistration;
       'api::intra-university-registration.intra-university-registration': ApiIntraUniversityRegistrationIntraUniversityRegistration;

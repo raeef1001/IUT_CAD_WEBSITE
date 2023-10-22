@@ -13,6 +13,7 @@ import {
   Footer,
 } from "./components";
 import { createContext, useEffect, useState } from "react";
+import image4 from "./assets/loading_images/4.gif"
 import axios from "axios";
 
 import Home from "./pages/Home";
@@ -32,7 +33,10 @@ import {
   activitiesElements,
   achievementsElements,
 } from "./constants/index";
+import AboutPage from "./pages/AboutPage";
 export const Context = createContext();
+
+
 const App = () => {
   const [BLOG, setBLOG] = useState(blogElements);
   useEffect(() => {
@@ -44,12 +48,12 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/blogs?populate=*",
+        "https://iut-backend.onrender.com/api/blogs?populate=*",
         reqOptions
       );
       const response = await request.json();
       setBLOG(response.data);
-      console.log("blogs at homeblog after setting", BLOG);
+      
       return response;
     };
     try {
@@ -70,12 +74,12 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/activities?populate=*",
+        "https://iut-backend.onrender.com/api/activities?populate=*",
         reqOptions
       );
       const response = await request.json();
       setActivities(response.data);
-      console.log("blogs at homeblog after setting", activities);
+     
       return response;
     };
 
@@ -97,12 +101,12 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/achievements?populate=*",
+        "https://iut-backend.onrender.com/api/achievements?populate=*",
         reqOptions
       );
       const response = await request.json();
       setAchievements(response.data);
-      console.log("blogs at homeblog after setting", achievements);
+      
       return response;
     };
     try {
@@ -123,7 +127,7 @@ const App = () => {
               attributes: {
                 formats: {
                   small: {
-                    url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                    url: "https://cdn.dribbble.com/users/1053052/screenshots/3600670/media/049491d00605f54d441aa47b9b419910.gif",
                   },
                 },
               },
@@ -139,7 +143,7 @@ const App = () => {
               attributes: {
                 formats: {
                   small: {
-                    url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                    url: "https://cdn.dribbble.com/users/1053052/screenshots/3600670/media/049491d00605f54d441aa47b9b419910.gif",
                   },
                 },
               },
@@ -155,7 +159,7 @@ const App = () => {
               attributes: {
                 formats: {
                   small: {
-                    url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                    url: "https://cdn.dribbble.com/users/1053052/screenshots/3600670/media/049491d00605f54d441aa47b9b419910.gif",
                   },
                 },
               },
@@ -166,8 +170,7 @@ const App = () => {
     ],
   });
 
-  // const blogs = useContext(Context);
-  // console.log("blog at home",blogs);
+
 
   useEffect(() => {
     const fetchBanner = async () => {
@@ -178,12 +181,12 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/banners?populate=*",
+        "https://iut-backend.onrender.com/api/banners?populate=*",
         reqOptions
       );
       const response = await request.json();
       setBanner(response);
-      console.log("banners after setting", banner);
+     
       return response;
     };
     try {
@@ -204,7 +207,7 @@ const App = () => {
               attributes: {
                 formats: {
                   small: {
-                    url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                    url: {image4},
                   },
                 },
               },
@@ -220,7 +223,7 @@ const App = () => {
               attributes: {
                 formats: {
                   small: {
-                    url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                    url: {image4},
                   },
                 },
               },
@@ -236,7 +239,7 @@ const App = () => {
               attributes: {
                 formats: {
                   small: {
-                    url: "https://media.tenor.com/TVfAxrSTjEgAAAAM/loading-buffer.gif",
+                    url: {image4},
                   },
                 },
               },
@@ -247,8 +250,7 @@ const App = () => {
     ],
   });
 
-  // const blogs = useContext(Context);
-  // console.log("blog at home",blogs);
+
 
   useEffect(() => {
     const fetchmember = async () => {
@@ -259,12 +261,12 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/committees?populate=*",
+        "https://iut-backend.onrender.com/api/committees?populate=*",
         reqOptions
       );
       const response = await request.json();
       setmember(response);
-      console.log("members after setting", member);
+      
       return response;
     };
     try {
@@ -292,8 +294,7 @@ const App = () => {
     ],
   });
 
-  // const blogs = useContext(Context);
-  // console.log("blog at home",blogs);
+
 
   useEffect(() => {
     const fetchintraRegistration = async () => {
@@ -304,12 +305,12 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/intra-university-registrations?populate=*",
+        "https://iut-backend.onrender.com/api/intra-university-registrations?populate=*",
         reqOptions
       );
       const response = await request.json();
       setintraRegistration(response);
-      console.log("intraRegistrations after setting", intraRegistration);
+     
       return response;
     };
     try {
@@ -336,8 +337,6 @@ const App = () => {
     ],
   });
 
-  // const blogs = useContext(Context);
-  // console.log("blog at home",blogs);
 
   useEffect(() => {
     const fetchinterRegistration = async () => {
@@ -348,12 +347,12 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/inter-university-registrations?populate=*",
+        "https://iut-backend.onrender.com/api/inter-university-registrations?populate=*",
         reqOptions
       );
       const response = await request.json();
       setinterRegistration(response);
-      console.log("interRegistrations after setting", interRegistration);
+   
       return response;
     };
     try {
@@ -362,7 +361,6 @@ const App = () => {
       console.log(err);
     }
   }, []);
-
   return (
     <Context.Provider
       value={[
@@ -372,7 +370,7 @@ const App = () => {
         achievements,
         member,
         intraRegistration,
-        interRegistration,
+        interRegistration
       ]}
     >
       <BrowserRouter>
@@ -382,7 +380,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
 
             <Route path="/Blog" element={<Blog />} />
-            {/* <Route path="/About" element={<About />} /> */}
+            <Route path="/About" element={<AboutPage />} />
+            
             <Route path="/Achievements" element={<Achievements />} />
             <Route path="/Activities" element={<Activities />} />
 

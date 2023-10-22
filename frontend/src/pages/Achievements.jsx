@@ -16,7 +16,7 @@ const Achievements = () => {
     return (
        <div className='min-h-[90vh] mt-10 '>
         <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
+         <p className={styles.sectionSubText}>IUTCS</p> 
         <h2 className={styles.sectionHeadText}>Achievements.</h2>
       </motion.div>
 
@@ -24,11 +24,7 @@ const Achievements = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Institute of Information Technology is one of the fastest growing
-        Institute at University of Dhaka. The study at this Institute is based
-        on three core values: professionalism, excellence and respect. By
-        establishing these principles, IIT ensures that graduates from this
-        Institute can effectively contribute in the industry.
+        Our achievements stand as a testament to our dedication and expertise in the world of computing. From groundbreaking projects to remarkable collaborations, we've consistently pushed the boundaries of innovation. Our journey is marked by a trail of successes that inspire us to aim even higher.
       </motion.p>
       
        

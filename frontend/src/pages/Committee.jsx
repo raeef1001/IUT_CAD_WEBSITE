@@ -14,7 +14,7 @@ const Committee = () => {
 return (
     <div className='min-h-[90vh] mt-10 '>
      <motion.div variants={textVariant()}>
-     <p className={styles.sectionSubText}>Introduction</p>
+      <p className={styles.sectionSubText}>IUTCS</p> 
      <h2 className={styles.sectionHeadText}>Members.</h2>
    </motion.div>
 
@@ -22,11 +22,7 @@ return (
      variants={fadeIn("", "", 0.1, 1)}
      className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
    >
-     Institute of Information Technology is one of the fastest growing
-     Institute at University of Dhaka. The study at this Institute is based
-     on three core values: professionalism, excellence and respect. By
-     establishing these principles, IIT ensures that graduates from this
-     Institute can effectively contribute in the industry.
+     Our members are the heart of our society, united by a passion for technology and a drive for excellence. Together, we form a dynamic community that collaborates, innovates, and inspires. Join us and become part of our vibrant network of tech enthusiasts, where opportunities and connections abound.
    </motion.p>
    
     

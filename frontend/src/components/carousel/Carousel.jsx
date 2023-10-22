@@ -22,7 +22,7 @@ const Carousel = ({ items }) => {
     <div className="carousel-container">
       {activeIndex > 0 && (
         <button
-          className="right-1/2 top-1/2 translate-x-[-200px] translate-y-[-50%] transform sm:translate-x-[-250px] md:translate-x-[-300px] lg:translate-x-[-350px] absolute z-40 flex h-9 w-9 cursor-pointer items-center justify-center
+          className="right-1/2 top-1/2 translate-x-[-100px] translate-y-[-50%] transform sm:translate-x-[-250px] md:translate-x-[-300px] lg:translate-x-[-350px] absolute z-40 flex h-9 w-9 cursor-pointer items-center justify-center
           rounded-full border-2 border-[#302e30] bg-[#181818] text-2xl opacity-75 transition duration-300 hover:opacity-100 md:h-12 md:w-12"
           onClick={handlePrevItemBtn}
         >
@@ -36,7 +36,7 @@ const Carousel = ({ items }) => {
       ))}
       {activeIndex < items.length - 1 && (
         <button
-          className="top-1/2 left-1/2 translate-x-[200px] translate-y-[-50%] transform sm:translate-x-[250px] md:translate-x-[300px] lg:translate-x-[350px] 
+          className="top-1/2 left-1/2 translate-x-[100px] translate-y-[-50%] transform sm:translate-x-[250px] md:translate-x-[300px] lg:translate-x-[350px] 
           absolute z-40 flex h-9 w-9 cursor-pointer items-center justify-center
       rounded-full border-2 border-[#302e30] bg-[#181818] text-2xl opacity-75 transition duration-300 hover:opacity-100 md:h-12 md:w-12"
           onClick={handleNextItemBtn}

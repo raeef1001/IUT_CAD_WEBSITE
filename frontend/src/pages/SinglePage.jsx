@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Context } from '../App';
 import { useParams } from "react-router-dom";
 import { SectionWrapper } from "../hoc";
@@ -7,52 +7,83 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-
+import image4 from "../assets/loading_images/4.gif";
 import { fadeIn, textVariant } from "../utils/motion";
 const SinglePage = () => {
   const [banner, BLOG, activities, achievements] = useContext(Context);
+  const [ourData, setourData] = React.useState(
+    {
+      attributes: {
+        title: "blog",
+        description: "loading",
+        publishedAt: "2015-14",
+        name_of_writer: "akash",
+        is_featured: true,
+        image: {
+          data: {
+              
+              attributes: {
+                
+                  formats: {
+                     small: {
+                          url:image4,
+                         
+                      },
+                     
+                  },
+                  
+              }
+          }
+      }
+      },
+    }
+  );
   const routeParams = useParams();
   const tags = routeParams.id.split("-");
-  console.log(tags[0]);
-  var ourData;
-  if (tags[0] == "blogs") {
-    console.log("got into blogs");
-    BLOG.map((data) => {
-      if (data.id == tags[1]) {
-        ourData = data;
-        console.log(ourData);
-      }
-    });
+  
+  useEffect(() => {
+    if (tags[0] == "blogs") {
+     
+      BLOG.map((data) => {
+        if (data.id == tags[1]) {
+          setourData(data)
+          
+        }
+      });
+    }
+    if (tags[0] == "achievements") {
+      achievements.map((data) => {
+        if (data.id == tags[1]) {
+          setourData(data)
+          
+        }
+      });
+    }
+    if (tags[0] == "activities") {
+      activities.map((data) => {
+       
+        if (data.id == tags[1]) {
+          setourData(data)
+         
+        }
+      });
+    }
   }
-  if (tags[0] == "achievements") {
-    achievements.map((data) => {
-      if (data.id == tags[1]) {
-        ourData = data;
-        console.log(ourData);
-      }
-    });
-  }
-  if (tags[0] == "activities") {
-    activities.map((data) => {
-      console.log("this is data", data);
-      if (data.id == tags[1]) {
-        ourData = data;
-        console.log(ourData);
-      }
-    });
-  }
+  , [BLOG,activities,achievements])
+ 
   return (
     <div>
+      
       <div className='min-h-[90vh] mt-10 '>
         <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>{tags[0]}</p>
-        <h2 className='text-white font-500 md:text-[30px] sm:text-[20px] xs:text-[15px] text-[10px]'>{ourData.attributes.title}</h2>
+        <h2 className='text-white font-500 md:text-[30px] sm:text-[20px] xs:text-[20px] text-[20px]'>{ourData.attributes.title}</h2>
       </motion.div>
-     <div className='rounded-xl overflow-hidden'>
+     <div className=' pt-10 pb-10' >
      <img
           src={ourData.attributes.image.data.attributes.formats.small.url}
           alt=""
-          className=" w-[50vh] pt-10 pb-10 rounded-xl overflow-hidden" 
+          className=" w-[50vh]  rounded-xl overflow-hidden" 
         />
      </div>
       <motion.p

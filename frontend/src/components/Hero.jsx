@@ -23,15 +23,15 @@ const Hero = () => {
              <span className='text-[#915EFF]'>IUTCS</span>
           </h1> 
           <p className={`${styles.heroSubText} mt-2  text-white-100 text-center`}>
-            I develop creative and functional user <br className='sm:block hidden' />
-            interfaces and web applications 
+          Unleashing Innovation, Connecting Minds<br className='sm:block hidden' />with The Power of Computing 
+           
 
 
 
 
           </p>
          </div>
-      <div className="mt-16 w-[400px] md:w-[600px] lg:w-[800px] xl:w-[1800px]  pl-[50px] md:pl-[50px] lg:pl-[50px] xl:pl-[10vw]">
+      <div className="mt-16 w-[600px] md:w-[1000px] lg:w-[1200px] xl:w-[1800px]  pl-[20px] md:pl-[12rem] lg:pl-[250px] xl:pl-[10vw]">
       <Main data={banner} />
       </div>
         </div>
@@ -40,7 +40,7 @@ const Hero = () => {
      
       
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+      <div className='absolute xs:bottom-10 bottom-32 w-full md:flex justify-center items-center hidden '>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div

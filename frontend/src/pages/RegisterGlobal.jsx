@@ -63,9 +63,8 @@ const RegisterGlobal = () => {
     event.preventDefault();
 
     try {
-      console.log(formData);
       const response = await axios.post(
-        "http://localhost:1337/api/registrations",
+        "https://iut-backend.onrender.com/api/registrations",
         submitForm,
         {
           headers: {
@@ -73,14 +72,13 @@ const RegisterGlobal = () => {
           },
         }
       );
-      console.log("Data posted successfully:", response.data);
+
       notify();
     } catch (error) {
       console.error("Error posting data:", error);
       // Handle error, show an error message, etc.
     } // 👈️ prevent page refresh
 
-    console.log(email, teamName, teamSize, teamleader, phone, university);
   };
 
   return (
@@ -124,7 +122,7 @@ const RegisterGlobal = () => {
         </div>
       </motion.div>
 
-      <div className="m-auto w-[60vh] pt-[10vh]">
+      <div className="m-auto w-[60vh] pt-[10vh] ">
         <form onSubmit={handleSubmit}>
           <div className="relative z-0 w-full mb-6 group">
             <input
@@ -132,7 +130,7 @@ const RegisterGlobal = () => {
               type="text"
               name="team_lead_name"
               id="team_lead_name"
-              className="block py-2.5 px-0 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-[70vw] lg:w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
@@ -149,7 +147,7 @@ const RegisterGlobal = () => {
               type="email"
               name="email"
               id="email"
-              className="block py-2.5 px-0 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-[70vw] lg:w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />
@@ -175,7 +173,7 @@ const RegisterGlobal = () => {
                 type="text"
                 name="team_name"
                 id="team_name"
-                className="block py-2.5 px-0 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-[70vw] lg:w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
               />
@@ -192,7 +190,7 @@ const RegisterGlobal = () => {
                 type="text"
                 name="university_name"
                 id="university_name"
-                className="block py-2.5 px-0 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-[70vw] lg:w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
               />
@@ -211,7 +209,7 @@ const RegisterGlobal = () => {
                 type="tel"
                 name="phone_number"
                 id="phone_number"
-                className="block py-2.5 px-0 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-[70vw] lg:w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
               />
@@ -228,7 +226,7 @@ const RegisterGlobal = () => {
                 type="number"
                 name="team_size"
                 id="team_size"
-                className="block py-2.5 px-0 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-[70vw] lg:w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
               />
@@ -242,7 +240,7 @@ const RegisterGlobal = () => {
           </div>
           <button
             type="submit"
-            className="   font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center className='bg-tertiary  text-white  shadow-md shadow-primary border-2"
+            className="   font-medium rounded-lg text-sm w-[70vw] lg:w-full sm:w-auto px-5 py-2.5 text-center className='bg-tertiary  text-white  shadow-md shadow-primary border-2"
           >
             Submit
           </button>

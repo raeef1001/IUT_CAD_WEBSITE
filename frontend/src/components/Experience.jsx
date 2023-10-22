@@ -1,6 +1,6 @@
 import React from "react";
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState } from "react";
+import { useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -15,8 +15,6 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { events } from "@react-three/fiber";
 const ExperienceCard = ({ experience }) => {
-  
-    
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -40,7 +38,9 @@ const ExperienceCard = ({ experience }) => {
       // iconOnClick={() => window.open("google.com", "_blank")}
     >
       <div>
-        <h3 className="text-white text-[14px] font-bold">{experience.attributes.event_name}</h3>
+        <h3 className="text-white text-[14px] font-bold">
+          {experience.attributes.event_name}
+        </h3>
         <p
           className="text-secondary text-[13px] font-semibold"
           style={{ margin: 0 }}
@@ -65,27 +65,26 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   const [events, setevents] = useState([
-        
     {
-        id: 1,
-        attributes: {
-            event_name: "rafy",
-            event_date: 3,
-            
-        }
+      id: 1,
+      attributes: {
+        event_name: "rafy",
+        event_date: 3,
+      },
     },
     {
-        id: 2,
-        attributes: {
-          event_name: "rafy",
-          event_date: 3,
-        }
-    }, {
-        id: 3,
-        attributes: {
-          event_name: "rafy",
-          event_date: 3,
-        }
+      id: 2,
+      attributes: {
+        event_name: "rafy",
+        event_date: 3,
+      },
+    },
+    {
+      id: 3,
+      attributes: {
+        event_name: "rafy",
+        event_date: 3,
+      },
     },
   ]);
   useEffect(() => {
@@ -97,46 +96,44 @@ const Experience = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/events?populate=*",
+        "https://iut-backend.onrender.com/api/events?populate=*",
         reqOptions
       );
       const response = await request.json();
       setevents(response.data);
-      console.log("eventss at homeevents after setting", events);
-      console.log(events)
+     
       return response;
     };
 
-    try{
-    const eventsss = fetchevents();
-  } catch (err) {
-    console.log(err);
-  }
+    try {
+      const eventsss = fetchevents();
+    } catch (err) {
+      console.log(err);
+    }
   }, [events]);
   return (
     <div className="">
-     <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
+      <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>IUTCS</p>
         <h2 className={styles.sectionHeadText}>Upcoming Events.</h2>
       </motion.div>
 
-     
-
-
-
-<div className="flex flex-col md:flex-row  ">
-<div className="mb-10 items-center content-center">
-     <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        Institute of Information Technology is one of the fastest growing
-        Institute at University of Dhaka. The study at this Institute is based
-        on three core values: professionalism, excellence and respect. By
-        establishing these principles, IIT ensures that graduates from this
-        Institute can effectively contribute in the industry.
-      </motion.p>
-     </div>
+      <div className="flex flex-col md:flex-row  ">
+        <div className="mb-10 items-center content-center">
+          <motion.p
+            variants={fadeIn("", "", 0.1, 1)}
+            className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          >
+            Join our upcoming event, a captivating fusion of technology and
+            creativity. Discover the latest trends, gain insights from industry
+            experts, and immerse yourself in hands-on workshops. Unleash your
+            potential and forge new connections in the ever-evolving world of
+            computing.Discover the latest trends, gain insights from industry
+            experts, and immerse yourself in hands-on workshops. Unleash your
+            potential and forge new connections in the ever-evolving world of
+            computing.
+          </motion.p>
+        </div>
         <div className="w-full">
           <VerticalTimeline>
             {events.map((experience, index) => (
@@ -147,17 +144,8 @@ const Experience = () => {
             ))}
           </VerticalTimeline>
         </div>
-</div>
-
-
-
-
-
-
-
-
-
-     </div>
+      </div>
+    </div>
   );
 };
 

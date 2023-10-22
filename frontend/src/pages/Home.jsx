@@ -4,7 +4,7 @@ import Achievements from "./Achievements";
 import { Context } from '../App';
 import Upcoming from '../components/upcoming';
 import MemberHome from '../components/memberHome';
-
+import MediaQuery from "react-responsive";
 const Home = () => {
   const titleBLOG = "Blogs";
   const titleAchievement = "Achievements";
@@ -19,12 +19,21 @@ const Home = () => {
         <Upcoming/>
         {/* <Tech /> */}
         <Works/>
-      <MemberHome/>
+        <MediaQuery query="(min-width: 1024px)">
+        <MemberHome/>
+         </MediaQuery>
+   
         <Feedbacks />
        
         <div className='relative z-0'>
           <ContactHome />
+          <MediaQuery query="(min-width: 1024px)">
+
           <StarsCanvas />
+          </MediaQuery>
+        
+         
+         
           
         </div>
         {/* <Footer/> */}
