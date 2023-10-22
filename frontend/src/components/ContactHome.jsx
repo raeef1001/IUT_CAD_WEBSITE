@@ -10,14 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MediaQuery from "react-responsive";
 const ContactHome = () => {
-  // const formRef = useRef();
-  // const [form, setForm] = useState({
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  // });
   const form = useRef();
-  // email js section
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -53,52 +46,6 @@ const ContactHome = () => {
     });
   const [loading, setLoading] = useState(false);
 
-  // const handleChange = (e) => {
-  //   const { target } = e;
-  //   const { name, value } = target;
-
-  //   setForm({
-  //     ...form,
-  //     [name]: value,
-  //   });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-
-  //   emailjs
-  //     .send(
-  //       'service_1ni64zu',
-  //       'template_kqv2qal',
-  //       {
-  //         from_name: form.name,
-  //         to_name: "raeef",
-  //         from_email: form.email,
-  //         to_email: "mohammadrafy1001@gmail.com",
-  //         message: form.message,
-  //       },
-  //       'CwVq_98jJte0PKovl'
-  //     )
-  //     .then(
-  //       () => {
-  //         setLoading(false);
-  //         alert("Thank you. I will get back to you as soon as possible.");
-
-  //         setForm({
-  //           name: "",
-  //           email: "",
-  //           message: "",
-  //         });
-  //       },
-  //       (error) => {
-  //         setLoading(false);
-  //         console.error(error);
-
-  //         alert("Ahh, something went wrong. Please try again.");
-  //       }
-  //     );
-  // };
 
   return (
     <div
@@ -121,8 +68,7 @@ const ContactHome = () => {
             <input
               type="text"
               name="from_name"
-              // value={form.name}
-              // onChange={handleChange}
+           
               placeholder="What's your good name?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
@@ -132,8 +78,7 @@ const ContactHome = () => {
             <input
               type="email"
               name="reply_to"
-              // value={form.email}
-              // onChange={handleChange}
+            
               placeholder="What's your web address?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
@@ -143,8 +88,7 @@ const ContactHome = () => {
             <textarea
               rows={7}
               name="message"
-              // value={form.message}
-              // onChange={handleChange}
+         
               placeholder="What you want to say?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />

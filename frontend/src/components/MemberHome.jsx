@@ -1,8 +1,4 @@
-import React, { useState, useEffect ,useContext} from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import React, { useContext} from "react";
 import { motion } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import {  menu, close } from "../assets";
 import { useRef } from "react";
 
 const Navbar = () => {
@@ -121,7 +121,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          {/* <img src={logo} alt="logo" className="w-12 h-12 object-contain" /> */}
+        
           <p className="text-white text-[24px] font-bold cursor-pointer flex ">
             IUTCS &nbsp;
             <span className="sm:block hidden"> </span>

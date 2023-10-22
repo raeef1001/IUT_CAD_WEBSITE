@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
-
-
+import { useContext } from "react";
+import { Context } from '../../App';
+import Image from './Image';
+import { Link } from 'react-router-dom';
 const CarouselItem = ({data,index,activeIndex}) => {
+  
     const [scaled, setScaled] = useState(false);
+    const [  banner,
+      BLOG,
+      activities,
+      achievements,
+      member,
+      intraRegistration,
+      interRegistration,pagesValue,setPagesValue] = useContext(Context);
 
   const offset = (index - activeIndex) / 4;
   const direction = Math.sign(index - activeIndex);
@@ -22,8 +32,10 @@ const CarouselItem = ({data,index,activeIndex}) => {
   const cssDisplay = `
         ${Math.abs(index - activeIndex) >= 3 ? 'none' : 'block'},
   `;
+
     return (
-        <div
+      
+        <Link to="/Pages"
         className=" absolute h-full w-full cursor-pointer overflow-hidden rounded-3xl drop-shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-700 ease-in-out"
         style={{
           transform: cssTransformProperties,
@@ -32,11 +44,14 @@ const CarouselItem = ({data,index,activeIndex}) => {
           zIndex: `${scaled ? 4 : 1}`,
         }}
         onClick={() => {
-          //setScaled(!scaled);
+          console.log(data);
+          setPagesValue(data);
+
+          
         }}
       >
-        {data}
-      </div>
+         <Image className ='h-full w-full ' src={data.attributes.image.data.attributes.formats.small.url} alt='Card1' />
+      </Link>
     );
 };
 

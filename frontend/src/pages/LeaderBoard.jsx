@@ -52,7 +52,7 @@ const LeaderBoard = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/leaderboards?sort=rank",
+        "http://localhost:1337/api/leaderboards?sort=rank",
         reqOptions
       );
       const response = await request.json();
@@ -89,6 +89,17 @@ const LeaderBoard = () => {
        
     <div>
       <TableComponent data={leaderboard}/>
+    </div>
+    <div>
+    <div style={{ border: '1px solid #ccc' }} className='h-[90vh] mt-24'>
+      <iframe
+        src="https://vjudge.net/contest/589327#rank"
+        title="VJudge Contest"
+        width="100%"
+        height="100%"
+        frameBorder="0"
+      ></iframe>
+    </div>
     </div>
     </div>
        

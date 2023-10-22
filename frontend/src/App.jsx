@@ -1,20 +1,14 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import {
-  About,
-  ContactHome,
-  Experience,
-  Feedbacks,
-  Hero,
+  
   Navbar,
-  Tech,
-  Works,
-  StarsCanvas,
+ 
   Footer,
 } from "./components";
 import { createContext, useEffect, useState } from "react";
 import image4 from "./assets/loading_images/4.gif"
-import axios from "axios";
+
 
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
@@ -34,6 +28,7 @@ import {
   achievementsElements,
 } from "./constants/index";
 import AboutPage from "./pages/AboutPage";
+import Pages from "./pages/pages";
 export const Context = createContext();
 
 
@@ -48,7 +43,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/blogs?populate=*",
+        "http://localhost:1337/api/blogs?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -74,7 +69,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/activities?populate=*",
+        "http://localhost:1337/api/activities?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -101,7 +96,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/achievements?populate=*",
+        "http://localhost:1337/api/achievements?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -181,7 +176,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/banners?populate=*",
+        "http://localhost:1337/api/banners?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -261,7 +256,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/committees?populate=*",
+        "http://localhost:1337/api/committees?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -305,7 +300,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/intra-university-registrations?populate=*",
+        "http://localhost:1337/api/intra-university-registrations?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -347,7 +342,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/inter-university-registrations?populate=*",
+        "http://localhost:1337/api/inter-university-registrations?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -361,6 +356,8 @@ const App = () => {
       console.log(err);
     }
   }, []);
+
+  const [pagesValue, setPagesValue] = useState({})
   return (
     <Context.Provider
       value={[
@@ -370,7 +367,7 @@ const App = () => {
         achievements,
         member,
         intraRegistration,
-        interRegistration
+        interRegistration,pagesValue,setPagesValue
       ]}
     >
       <BrowserRouter>
@@ -392,6 +389,7 @@ const App = () => {
             <Route path="/RegisterGlobal" element={<RegisterGlobal />} />
             <Route path="/RegisterIUT" element={<RegisterIUT />} />
             <Route path="/SinglePage/:id" element={<SinglePage />} />
+            <Route path="/Pages" element={<Pages/>} />
           </Routes>
           <Footer />
         </div>

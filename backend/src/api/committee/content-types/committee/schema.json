@@ -29,11 +29,9 @@
         "audios"
       ]
     },
-    "sequence": {
-      "type": "integer"
-    },
-    "email": {
-      "type": "email"
+    "type": {
+      "type": "string",
+      "default": "member"
     }
   }
 }

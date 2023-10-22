@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useContext } from "react";
+import { Context } from '../App';
+import { Link } from 'react-router-dom';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -10,55 +13,43 @@ import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
-import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import { events } from "@react-three/fiber";
 const ExperienceCard = ({ experience }) => {
+  const [  banner,
+    BLOG,
+    activities,
+    achievements,
+    member,
+    intraRegistration,
+    interRegistration,pagesValue,setPagesValue] = useContext(Context);
   return (
-    <VerticalTimelineElement
+    <VerticalTimelineElement 
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
-        // padding: "1rem",
+     
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      // date={experience.date}
+   
       iconStyle={{ background: "#1d1836", color: "#fff" }}
-      // icon={
-      //   <div className="flex justify-center items-center w-full h-full">
-      //     {/* <img
-      //       src={experience.icon}
-      //       alt={experience.company_name}
-      //       className='w-[60%] h-[60%] object-contain'
-      //     /> */}
-      //   </div>
-      // }
+    
       position="right"
-      // iconOnClick={() => window.open("google.com", "_blank")}
+    
     >
-      <div>
-        <h3 className="text-white text-[14px] font-bold">
-          {experience.attributes.event_name}
+      <Link to="/Pages" onClick={()=>setPagesValue(experience)} >
+        <h3 className="text-white text-[14px] font-bold cursor-pointer">
+          {experience.attributes.title}
         </h3>
         <p
-          className="text-secondary text-[13px] font-semibold"
+          className="text-secondary text-[13px] font-semibold cursor-pointer"
           style={{ margin: 0 }}
         >
           {experience.attributes.event_date}
         </p>
-      </div>
+      </Link>
 
-      {/* <ul className='mt-5 list-disc ml-5 space-y-2'>
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
-          >
-            {point}
-          </li>
-        ))}
-      </ul> */}
+      
     </VerticalTimelineElement>
   );
 };
@@ -96,7 +87,7 @@ const Experience = () => {
         },
       };
       const request = await fetch(
-        "https://iut-backend.onrender.com/api/events?populate=*",
+        "http://localhost:1337/api/events?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -110,7 +101,7 @@ const Experience = () => {
     } catch (err) {
       console.log(err);
     }
-  }, [events]);
+  }, []);
   return (
     <div className="">
       <motion.div variants={textVariant()}>

@@ -754,14 +754,15 @@ export interface ApiBannerBanner extends Schema.CollectionType {
     singularName: 'banner';
     pluralName: 'banners';
     displayName: 'banner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.String;
     image: Attribute.Media;
+    description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -823,8 +824,7 @@ export interface ApiCommitteeCommittee extends Schema.CollectionType {
     name: Attribute.String;
     title: Attribute.String;
     image: Attribute.Media;
-    sequence: Attribute.Integer;
-    email: Attribute.Email;
+    type: Attribute.String & Attribute.DefaultTo<'member'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -849,13 +849,16 @@ export interface ApiEventEvent extends Schema.CollectionType {
     singularName: 'event';
     pluralName: 'events';
     displayName: 'event';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    event_name: Attribute.String;
+    title: Attribute.String;
     event_date: Attribute.Date;
+    description: Attribute.RichText;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

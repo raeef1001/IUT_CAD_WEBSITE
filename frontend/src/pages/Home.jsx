@@ -1,9 +1,6 @@
 import React, { useContext } from 'react';
-import { About, ContactHome, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas,Footer} from "../components";
-import Achievements from "./Achievements";
+import { About, ContactHome, Experience, Feedbacks, Hero, Navbar,  Works, StarsCanvas,Footer,MemberHome} from "../components";
 import { Context } from '../App';
-import Upcoming from '../components/upcoming';
-import MemberHome from '../components/memberHome';
 import MediaQuery from "react-responsive";
 const Home = () => {
   const titleBLOG = "Blogs";
@@ -15,8 +12,11 @@ const Home = () => {
           {/* <Navbar /> */}
           <Hero />
         </div>
+     
         <About />
-        <Upcoming/>
+         
+        
+        <Experience />
         {/* <Tech /> */}
         <Works/>
         <MediaQuery query="(min-width: 1024px)">

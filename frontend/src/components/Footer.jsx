@@ -1,5 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { logo } from "../assets";
 import navIcon1 from "../assets/nav-icon1.svg";
 import navIcon2 from "../assets/nav-icon2.svg";
 import navIcon3 from "../assets/github.png";
@@ -9,7 +7,7 @@ const Footer = () => {
     <div className="footer">
      <div className="father">
      <div className="left-side">
-      {/* <img id="logo" src={logo} alt="Logo" className="h-[10vh]"/> */}
+    
         <h1>IUTCS</h1>
         </div>
         <div id="social">

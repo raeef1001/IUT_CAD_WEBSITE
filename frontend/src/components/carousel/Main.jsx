@@ -1,9 +1,5 @@
 import React from 'react';
 import Carousel from './Carousel';
-import card1 from './carouselImages/card1.svg'
-import card2 from './carouselImages/card2.svg'
-import card3 from './carouselImages/card3.svg'
-import card4 from './carouselImages/card4.svg'
 import Image from './Image';
 
 const Main = (props) => {
@@ -27,7 +23,7 @@ const Main = (props) => {
         
          
     
-          <Carousel items={imageItems} />
+          <Carousel items={props.data} />
     
       
     );

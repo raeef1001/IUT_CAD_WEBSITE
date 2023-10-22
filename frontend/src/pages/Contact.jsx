@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div className="min-h-[90vh] mt-10 ">
       <motion.div variants={textVariant()}>
-        {/* <p className={styles.sectionSubText}>IUTCS</p> */}
+      
         <h2 className={styles.sectionHeadText}>Contact.</h2>
       </motion.div>
 
