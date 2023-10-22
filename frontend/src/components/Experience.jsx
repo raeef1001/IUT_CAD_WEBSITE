@@ -87,7 +87,7 @@ const Experience = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/events?populate=*",
+        "https://iut-backend.onrender.com/api/events?populate=*",
         reqOptions
       );
       const response = await request.json();

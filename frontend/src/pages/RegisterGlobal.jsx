@@ -64,7 +64,7 @@ const RegisterGlobal = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:1337/api/registrations",
+        "https://iut-backend.onrender.com/api/registrations",
         submitForm,
         {
           headers: {

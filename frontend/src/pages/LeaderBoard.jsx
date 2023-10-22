@@ -52,7 +52,7 @@ const LeaderBoard = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/leaderboards?sort=rank",
+        "https://iut-backend.onrender.com/api/leaderboards?sort=rank",
         reqOptions
       );
       const response = await request.json();

@@ -43,7 +43,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/blogs?populate=*",
+        "https://iut-backend.onrender.com/api/blogs?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -69,7 +69,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/activities?populate=*",
+        "https://iut-backend.onrender.com/api/activities?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -96,7 +96,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/achievements?populate=*",
+        "https://iut-backend.onrender.com/api/achievements?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -176,7 +176,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/banners?populate=*",
+        "https://iut-backend.onrender.com/api/banners?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -256,7 +256,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/committees?populate=*",
+        "https://iut-backend.onrender.com/api/committees?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -300,7 +300,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/intra-university-registrations?populate=*",
+        "https://iut-backend.onrender.com/api/intra-university-registrations?populate=*",
         reqOptions
       );
       const response = await request.json();
@@ -342,7 +342,7 @@ const App = () => {
         },
       };
       const request = await fetch(
-        "http://localhost:1337/api/inter-university-registrations?populate=*",
+        "https://iut-backend.onrender.com/api/inter-university-registrations?populate=*",
         reqOptions
       );
       const response = await request.json();
